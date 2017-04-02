@@ -1,13 +1,15 @@
-// function facRec(n) {
-//     if(n == 0){
-//     	return 1;	
-//     } 
-// 	return n * fac(n - 1);
-// }
+//recursive factorial
+function facRec(n) {
+    if(n == 0){
+    	return 1;	
+    } 
+	return n * fac(n - 1);
+}
 
-// facRec(4);
-// console.log(facRec(4));
+facRec(4);
+console.log(facRec(4));
 
+//iterative factorial
 function facIter(n) {
 	var tmp;
 	
@@ -23,7 +25,7 @@ function facIter(n) {
 facIter(4);
 console.log(facIter(4));
 
-//fibo recursivo con una funcino auxiliar para bajar el O(N)
+//recursive fibo with aux function
 function fiboRec(n){
 	if(n <= 1){
 		return 1;
@@ -38,7 +40,7 @@ function aux(n, acc, prev) {
 	return this.aux(n, acc, acc + prev)
 }
 
-//comun con un while;
+//iterative fibonacci
 function fibonacci(n) {
 	var tmp, prev = 1, acc = 0;
 	while (n > 0){
@@ -47,11 +49,6 @@ function fibonacci(n) {
 	    acc = tmp + acc; 
 	    n--;
 	}
-	return acc;
-
-	
+	return acc;	
 }
-
-
-
-console.log(fibonacci(5));*/
+console.log(fibonacci(5));
