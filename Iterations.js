@@ -1,6 +1,7 @@
 //Binary Gap
 function binaryGapCeros (n) {
 	var number = (n >>> 0).toString(2);
+	console.log('number => ', number);
 	var maxBinaryGap = 0;
 	var binaryGap = 0;
 	var valid = false;
@@ -12,23 +13,23 @@ function binaryGapCeros (n) {
 			valid = true;
 		} else if(valid) {
 			binaryGap++;
+			//esto esta mal y me reseteaba al ultimo GAP siempre,
+			//solo tenia que hacerlo cuando valid = true;
 			//maxBinaryGap = (binaryGap > maxBinaryGap) ? binaryGap : maxBinaryGap;			
 		}
-		
 	}
-	
 	return (maxBinaryGap == 0 ) ? 0 : maxBinaryGap;
 }
 
 
 
-console.log('529', binaryGapCeros(529));
-console.log('51712', binaryGapCeros(51712));//got 9 expected 2 110010100000000
-console.log('20', binaryGapCeros(20));//got 2 expected 1 10100
-console.log('6', binaryGapCeros(6));//  got 1 expected 0 110
+// console.log('529', binaryGapCeros(529));
+// console.log('51712', binaryGapCeros(51712));//got 9 expected 2 110010100000000
+// console.log('20', binaryGapCeros(20));//got 2 expected 1 10100
+// console.log('6', binaryGapCeros(6));//  got 1 expected 0 110
 console.log('328', binaryGapCeros(328));//  got 3 expected 2  101001000
-console.log('16', binaryGapCeros(16));// got 4 expected 0 n=16=2**4
-console.log('1024', binaryGapCeros(1024));// got 10 expected 0 n=1024=2**10
+// console.log('16', binaryGapCeros(16));// got 4 expected 0 n=16=2**4
+// console.log('1024', binaryGapCeros(1024));// got 10 expected 0 n=1024=2**10
 
 /*
 	A binary gap within a positive integer N is any maximal sequence of consecutive zeros that is surrounded by ones at both ends in the binary representation of N.
