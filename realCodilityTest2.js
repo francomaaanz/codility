@@ -6,11 +6,26 @@ function solution(A, B) {
     A.sort(cmp);
     B.sort(cmp);
     var i = 0;
-    for (var k = 0; k < m; k++) {
-        if (i < k && B[i] == A[k])
+    /* Wrong
+    for (var k = 0; k < n; k++) {
+        if (i < m - 1 && B[i] < A[k])
             i += 1;
         if (A[k] == B[i])
             return A[k];
+    }
+    */
+    for (var k = 0; k < n;) {
+        if (A[k] == B[i]) { 
+            return A[k];
+        }
+
+        if (i < m - 1 && B[i] < A[k]) {
+            i += 1;
+        }
+        else {
+            k += 1;
+        }
+            
     }
     return -1;
 }
