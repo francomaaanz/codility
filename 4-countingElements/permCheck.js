@@ -1,3 +1,7 @@
+/*
+
+*/
+
 function solution(A) {
     const N = A.length;
     return Number(new Set(A).size === N && Math.max(...A) === N);

@@ -1,32 +1,18 @@
 function solution(a) {
-  const n = a.length;
+  var left = 0;
+  var rigth = 0;
+  var diff = 0;
+  var result = Infinity;
+  var allSum = a.reduce(function(a,b){return a+b;});
+  
+  for (var i = 1; i < a.length; ++i) {
+    left = left  + a[i-1];
+    rigth = allAsum - left;
+    diff = Math.abs(left - rigth);
+    result = (result > diff) ? diff : result;
+  };
 
-  if (n === 0) {
-    return 0;
-  }
-
-  if (n === 1) {
-    return Math.abs(a[0]);
-  }
-
-  let sum = 0;
-  for (let i = 0; i < n; i++) {
-    sum += a[i];
-  }
-
-  let min = Number.MAX_SAFE_INTEGER;
-  let sumL = 0;
-  let sumR = 0;
-  for (let i = 0; i < n - 1; i++) {
-    sumL += a[i];
-    sumR = sum - sumL;
-    const tmpMin = Math.abs(sumL - sumR);
-    if (tmpMin < min) {
-      min = tmpMin;
-    }
-  }
-
-  return min;
+  return result;
 }
 
 var A = [];
@@ -38,7 +24,7 @@ A[4] = 3;
 
 var B =  [-10, -20, -30, -40, 100]; //got 0 expected 20
 
-console.log(solution(B));
+//console.log(solution(A));
 /*
 |(A[0] + A[1] + ... + A[P − 1]) − (A[P] + A[P + 1] + ... + A[N − 1])|
 
